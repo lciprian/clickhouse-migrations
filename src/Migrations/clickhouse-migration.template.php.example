@@ -1,0 +1,24 @@
+<?php
+
+class {FILE_NAME} extends \Serkarn\ClickhouseMigrations\Migrations\BaseMigration
+{
+    
+    /**
+     * 
+     * Migration up method
+     */
+    public function up()
+    {
+        
+    }
+    
+    /**
+     * 
+     * Migration down method
+     */
+    public function down()
+    {
+        
+    }
+
+}

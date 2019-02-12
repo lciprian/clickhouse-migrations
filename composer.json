@@ -1,0 +1,21 @@
+{
+    "name": "serkarn/clickhouse-migrations",
+    "description": "Clickhouse migrations for laravel/lumen",
+    "type": "library",
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1.3",
+        "smi2/phpclickhouse": "^1.3",
+        "illuminate/console": "5.7.*",
+        "illuminate/support": "5.7.*",
+        "illuminate/contracts": "5.7.*",
+        "league/flysystem": "^1.0.8",
+        "symfony/finder": "^4.1"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Serkarn\\ClickhouseMigrations\\": "src/"
+        }
+    }
+}
