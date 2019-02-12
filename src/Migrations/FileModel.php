@@ -57,10 +57,20 @@ class FileModel
      */
     public function files(string $directory, bool $hidden = false): array
     {
+        $fullPath = $this->normalizePath($this->getPathPrefix() . $directory);
         return iterator_to_array(
-            \Symfony\Component\Finder\Finder::create()->files()->ignoreDotFiles(! $hidden)->in($directory)->depth(0)->sortByName(),
+            \Symfony\Component\Finder\Finder::create()->files()->ignoreDotFiles(! $hidden)->in($fullPath)->depth(0)->sortByName(),
             false
         );
+    }
+    
+    /**
+     * 
+     * @param string $path
+     */
+    public function getFullPath(string $path): string
+    {
+        return $this->normalizePath($this->getPathPrefix() . $path);
     }
     
     /**
@@ -70,6 +80,16 @@ class FileModel
     public function getPathPrefix(): string
     {
         return $this->adapter->getPathPrefix();
+    }
+
+    /**
+     * 
+     * @param string $path
+     * @return string
+     */
+    protected function normalizePath(string $path): string
+    {
+        return str_replace('//', '/', $path);
     }
     
 }

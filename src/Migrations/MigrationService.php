@@ -138,11 +138,7 @@ class MigrationService
      */
     protected function getMigrationObject(string $file): MigrationInterface
     {
-        $filePath = $this->normalizePath(
-                $this->fileModel->getPathPrefix() .
-                $this->getConfig()['dir'] .
-                $file
-        );
+        $filePath = $this->fileModel->getFullPath($this->getConfig()['dir'] . $file);
         require_once $filePath;
         $className = str_replace('.php', '', $file);
         return new $className();
@@ -162,16 +158,6 @@ class MigrationService
             ];
         }
         return $this->config;
-    }
-    
-    /**
-     * 
-     * @param string $path
-     * @return string
-     */
-    protected function normalizePath(string $path): string
-    {
-        return str_replace('//', '/', $path);
     }
 
 }

@@ -16,23 +16,22 @@ composer require serkarn/laravel-clickhouse-migrations
 Example for clickhouse and migrations settings:
 
 ```php
-    ...
-    'clickhouse' => [
-        'host' => env('CLICKHOUSE_HOST', 'localhost'),
-        'port' => env('CLICKHOUSE_PORT', 8123),
-        'username' => env('CLICKHOUSE_USER', 'default'),
-        'password' => env('CLICKHOUSE_PASSWORD', ''),
-        'options' => [
-            'database' => env('CLICKHOUSE_DATABASE', 'default'),
-            'timeout' => 1,
-            'connectTimeOut' => 2,
-        ],
+...
+'clickhouse' => [
+    'host' => env('CLICKHOUSE_HOST', 'localhost'),
+    'port' => env('CLICKHOUSE_PORT', 8123),
+    'username' => env('CLICKHOUSE_USER', 'default'),
+    'password' => env('CLICKHOUSE_PASSWORD', ''),
+    'options' => [
+        'database' => env('CLICKHOUSE_DATABASE', 'default'),
+        'timeout' => 1,
+        'connectTimeOut' => 2,
     ],
-    'clickhouse-migrations' => [
-        'dir' => env('CLICKHOUSE_MIGRATION_DIR', '/database/clickhouse-migrations/'),
-        'table' => env('CLICKHOUSE_MIGRATION_TABLE_NAME', 'migrations'),
-        'template' => env('CLICKHOUSE_MIGRATION_TEMPLATE', '/config/clickhouse-migration.php.example'),
-    ],
+],
+'clickhouse-migrations' => [
+    'dir' => env('CLICKHOUSE_MIGRATION_DIR', '/database/clickhouse-migrations/'),
+    'table' => env('CLICKHOUSE_MIGRATION_TABLE_NAME', 'migrations'),
+],
     ...
 ```
 
