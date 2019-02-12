@@ -5,7 +5,7 @@ Library is suitable for Laravel.
 
 ## Installing
 
-```
+```bash
 composer require serkarn/laravel-clickhouse-migrations
 ```
 
@@ -15,8 +15,8 @@ composer require serkarn/laravel-clickhouse-migrations
 
 Example for clickhouse and migrations settings:
 
-```
-...
+```php
+    ...
     'clickhouse' => [
         'host' => env('CLICKHOUSE_HOST', 'localhost'),
         'port' => env('CLICKHOUSE_PORT', 8123),
@@ -33,12 +33,12 @@ Example for clickhouse and migrations settings:
         'table' => env('CLICKHOUSE_MIGRATION_TABLE_NAME', 'migrations'),
         'template' => env('CLICKHOUSE_MIGRATION_TEMPLATE', '/config/clickhouse-migration.php.example'),
     ],
-...
+    ...
 ```
 
 ### Register provider
 
-```
+```php
 'providers' => [
     ...
     \Serkarn\ClickhouseMigrations\ClickhouseProvider::class,
@@ -50,13 +50,13 @@ Example for clickhouse and migrations settings:
 
 ### Create new migration
 
-```
+```bash
 php artisan clickhouse:migration:create {name}
 ```
 
 ### Up migrations
 
-```
+```bash
 php artisan clickhouse:migrate
 ```
 
