@@ -9,7 +9,7 @@ class Migrate extends \Illuminate\Console\Command
      *
      * @var string
      */
-    protected $signature = 'clickhouse:migrate {--down}';
+    protected $signature = 'clickhouse:migrate {--down} {--y}';
     
     /**
      *
@@ -57,7 +57,7 @@ class Migrate extends \Illuminate\Console\Command
                 'Migrations:' . "\n\t" .
                 $nonAppliedMigrations->implode("\n\t")
         );
-        if (!$this->confirm('Do you wish to apply?')) {
+        if (!$this->option('y') && !$this->confirm('Do you wish to apply?')) {
             return true;
         }
         foreach ($nonAppliedMigrations as $nonAppliedMigration) {
@@ -83,7 +83,7 @@ class Migrate extends \Illuminate\Console\Command
                 'Migration:' . "\n" .
                 "\t" . $migration
         );
-        if (!$this->confirm('Are you sure?')) {
+        if (!$this->option('y') && !$this->confirm('Are you sure?')) {
             return true;
         }
         $this->migrationService->down($migration);

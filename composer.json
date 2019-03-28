@@ -1,6 +1,13 @@
 {
     "name": "serkarn/clickhouse-migrations",
     "description": "Clickhouse migrations for laravel/lumen",
+    "keywords": [
+        "laravel",
+        "clikchouse",
+        "lumen",
+        "migration",
+        "migrations"
+    ],
     "type": "library",
     "minimum-stability": "dev",
     "require": {
