@@ -1,5 +1,5 @@
 {
-    "name": "serkarn/clickhouse-migrations",
+    "name": "lciprian/clickhouse-migrations",
     "description": "Clickhouse migrations for laravel/lumen",
     "keywords": [
         "laravel",
@@ -11,7 +11,7 @@
     "type": "library",
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.1.3",
+        "php": "^7.2",
         "smi2/phpclickhouse": "^1.3",
         "illuminate/console": "5.7.*",
         "illuminate/support": "5.7.*",
